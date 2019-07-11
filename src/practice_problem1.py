@@ -45,9 +45,9 @@ def main():
     run_test_shrink()
 #     run_test_double_then_shrink()
 #     run_test_reset()
-    run_test_steal()
-    run_test_get_history()
-    run_test_combined_box()
+#     run_test_steal()
+#     run_test_get_history()
+#     run_test_combined_box()
 
 
 ########################################################################
@@ -289,7 +289,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # DONE: 5. Implement and test this function.
+        # TODO: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -301,10 +301,12 @@ class Box(object):
         # and THEN translate the pseudo-code to a solution.
         # --------------------------------------------------------------
         self.volume = new_volume
-
-        for k in range(new_volume):
-            self.contents = self.contents + new_volume[k]
-        return self.contents
+        if len(self.contents) > self.volume:
+            discarded = ''
+        else:
+            discarded = len(self.contents) - self.volume
+            self.contents - discarded
+        return discarded
 
     def double_then_shrink(self, new_volume):
         """
