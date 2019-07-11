@@ -141,7 +141,7 @@ class Box(object):
           :type additional_contents: str
         """
         # --------------------------------------------------------------
-        # TODO: 3. Implement and test this function.
+        # DONE: 3. Implement and test this function.
         #     See the testing code (below) for more examples.
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -170,17 +170,23 @@ class Box(object):
         space = self.volume - len_contents  #  substring of additional contents
 
         number_of_characters_to_append = len(additional_contents) - space
+        print(number_of_characters_to_append)
 
-        stuff_to_add = number_of_characters_to_append
+        stuff_to_add = self.contents
 
-        for k in range(number_of_characters_to_append):
-            len_contents = len_contents + stuff_to_add
-            if len(additional_contents) < self.volume:
-                for k in range(len(additional_contents)):
-                    stuff_to_return = len_contents - stuff_to_add
-                    return stuff_to_return
-            else:
-                return self.contents
+        end_of_contents = 0
+
+        stuff_to_return = ''
+
+        if number_of_characters_to_append < 0:
+            self.contents = self.contents + additional_contents
+        else:
+            for k in range(number_of_characters_to_append - 1):
+                self.contents = self.contents + additional_contents[k]
+                end_of_contents = k
+            for j in range(end_of_contents + 1, len(additional_contents)):
+                stuff_to_return = stuff_to_return + additional_contents[j]
+        return stuff_to_return
 
     def double(self):
         """
