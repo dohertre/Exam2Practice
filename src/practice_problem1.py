@@ -39,7 +39,7 @@ def main():
     # UN-comment tests as you work the problems.
     ####################################################################
 
-#     run_test_init()
+    run_test_init()
 #     run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
@@ -106,8 +106,8 @@ class Box(object):
             self.contents = ''
         else:
             self.contents = contents
-            self.volume = volume
 
+        self.volume = volume
 
     def append_string(self, additional_contents):
         """
@@ -162,6 +162,14 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and continue working on the problem.
         # --------------------------------------------------------------
+        # len_contents = len(self.contents)
+        # extra = self.volume - len_contents
+        # self.contents = self.contents
+
+        len_contents = len(self.contents)
+        space = self.volume - len_contents
+        number_of_characters_to_append = self.contents + additional_contents[space]
+        return number_of_characters_to_append
 
     def double(self):
         """
