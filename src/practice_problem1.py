@@ -41,8 +41,8 @@ def main():
 
     run_test_init()
     run_test_append_string()
-#     run_test_double()
-#     run_test_shrink()
+    # run_test_double()
+    run_test_shrink()
 #     run_test_double_then_shrink()
 #     run_test_reset()
 #     run_test_steal()
@@ -108,6 +108,8 @@ class Box(object):
             self.contents = contents
 
         self.volume = volume
+        self.original_volume = self.volume
+        self.original_contents = self.contents
 
     def append_string(self, additional_contents):
         """
@@ -170,7 +172,6 @@ class Box(object):
         space = self.volume - len_contents  #  substring of additional contents
 
         number_of_characters_to_append = len(additional_contents) - space
-        print(number_of_characters_to_append)
 
         stuff_to_add = self.contents
 
@@ -222,7 +223,7 @@ class Box(object):
           #                       contents that did NOT fit]
         """
         # --------------------------------------------------------------
-        # TODO: 4. Implement and test this function.
+        # DONE: 4. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -234,6 +235,7 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         ################################################################
+        return self.append_string(self.contents)
 
     def shrink(self, new_volume):
         """
@@ -346,7 +348,7 @@ class Box(object):
           when this Box was constructed.
         """
         # --------------------------------------------------------------
-        # TODO: 7. Implement and test this function.
+        # DONE: 7. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -354,7 +356,8 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
-
+        self.volume = self.original_volume
+        self.contents = self.original_contents
     def steal(self, other_box):
         """
         What comes in:
