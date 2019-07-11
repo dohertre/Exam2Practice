@@ -40,7 +40,7 @@ def main():
     ####################################################################
 
     run_test_init()
-#run_test_append_string()
+    run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
 #     run_test_double_then_shrink()
@@ -169,8 +169,14 @@ class Box(object):
         len_contents = len(self.contents)
         space = self.volume - len_contents  #  substring of additional contents
 
-        number_of_characters_to_append = self.contents + additional_contents[space]
-        return number_of_characters_to_append
+        number_of_characters_to_append = space - self.contents
+
+        stuff_to_add = len(number_of_characters_to_append)
+
+        for k in range(len_contents):
+            self.contents = self.contents + stuff_to_add
+
+        stuff_to_return = 'XXX'
 
     def double(self):
         """
