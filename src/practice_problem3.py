@@ -163,7 +163,7 @@ def practice_problem3a(circles):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-    total = 0
+    total = 1
     for k in range(len(circles)):
         if circles[k] == []:
             return 1
