@@ -171,6 +171,7 @@ def practice_problem3a(circles):
             total = total * circles[k].center.x
     return total
 
+
 def run_test_practice_problem3b():
     """ Tests the    practice_problem3b    function. """
     # ------------------------------------------------------------------
@@ -284,7 +285,11 @@ def practice_problem3b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
-
+    for k in range(len(sequence)):
+        if sequence[k] == (len(sequence) - 1):
+            return True
+        else:
+            return False
 
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
