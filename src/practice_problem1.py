@@ -169,14 +169,18 @@ class Box(object):
         len_contents = len(self.contents)
         space = self.volume - len_contents  #  substring of additional contents
 
-        number_of_characters_to_append = space - self.contents
+        number_of_characters_to_append = len(additional_contents) - space
 
-        stuff_to_add = len(number_of_characters_to_append)
+        stuff_to_add = number_of_characters_to_append
 
-        for k in range(len_contents):
-            self.contents = self.contents + stuff_to_add
-
-        stuff_to_return = 'XXX'
+        for k in range(number_of_characters_to_append):
+            len_contents = len_contents + stuff_to_add
+            if len(additional_contents) < self.volume:
+                for k in range(len(additional_contents)):
+                    stuff_to_return = len_contents - stuff_to_add
+                    return stuff_to_return
+            else:
+                return self.contents
 
     def double(self):
         """
