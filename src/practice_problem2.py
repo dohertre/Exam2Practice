@@ -206,7 +206,10 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    total = ''
+    for k in range(len(sequence)):
+            total = total + sequence[k][0]
+    return total
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
