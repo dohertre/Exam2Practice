@@ -291,6 +291,7 @@ def practice_problem3b(sequence):
         else:
             return False
 
+
 def run_test_practice_problem3c():
     """ Tests the    practice_problem3c    function. """
     # ------------------------------------------------------------------
@@ -365,14 +366,18 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
-
+    total = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            total = total + [k]
+    return total
 
 def run_test_practice_problem3d():
     """ Tests the    practice_problem3d    function. """
