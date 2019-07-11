@@ -3,7 +3,7 @@ PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # Rebekah Doherty: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,30 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    # Test 1
+    actual = practice_problem2a([2, 10, 5, -20, 8], 6)
+    expected = [8, 16, 11, -14, 14]
+    print('Test 1 expected:', expected)
+    print('actual:', actual)
+
+    # Test 2
+    actual = practice_problem2a([1, 3, 5, 7], 4)
+    expected = [5, 7, 9, 11]
+    print('Test 1 expected:', expected)
+    print('actual:', actual)
+
+    # Test 3
+    actual = practice_problem2a([340, 11, 68, 45, -900, -20], 10)
+    expected = [350, 21, 78, 55,  -890, -10]
+    print('Test 1 expected:', expected)
+    print('actual:', actual)
+
+    # Test 4
+    actual = practice_problem2a([20, 35, 5, 2, 7, 8], 1)
+    expected = [21, 36, 6, 3, 8, 9]
+    print('Test 1 expected:', expected)
+    print('actual:', actual)
 
 
 def practice_problem2a(sequence, delta):
