@@ -40,7 +40,7 @@ def main():
     ####################################################################
 
     run_test_init()
-#     run_test_append_string()
+#run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
 #     run_test_double_then_shrink()
@@ -167,7 +167,8 @@ class Box(object):
         # self.contents = self.contents
 
         len_contents = len(self.contents)
-        space = self.volume - len_contents
+        space = self.volume - len_contents  #  substring of additional contents
+
         number_of_characters_to_append = self.contents + additional_contents[space]
         return number_of_characters_to_append
 
@@ -176,7 +177,7 @@ class Box(object):
         What comes in:
           -- self
         What goes out:
-          Returrns a string that is whatever substring of the
+          Returns a string that is whatever substring of the
           doubled contents did not fit in this Box
           (or the empty string if the entire doubled contents fit)
         Side effects:
