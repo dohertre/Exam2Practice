@@ -466,7 +466,7 @@ def practice_problem3d(sequence):
     # return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # DONE: 6. Just ABOVE this TODO, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -480,11 +480,10 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
-    for k in range(len(sequence)):
-        if practice_problem3c(sequence) == []:
-            return -1
-        else:
-            return sequence[k]
+    if practice_problem3c(sequence) == []:
+        return -1
+    else:
+        return practice_problem3c(sequence)[0]
 
 def run_test_practice_problem3e():
     """ Tests the    practice_problem3e    function. """
