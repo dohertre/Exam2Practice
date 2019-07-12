@@ -43,7 +43,7 @@ def main():
     run_test_append_string()
     run_test_double()
     run_test_shrink()
-#     run_test_double_then_shrink()
+    run_test_double_then_shrink()
 #     run_test_reset()
 #     run_test_steal()
 #     run_test_get_history()
@@ -363,6 +363,8 @@ class Box(object):
         #    DIFFICULTY:      5
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        d_then_s = len(self.double()) + len(self.shrink(new_volume))
+        return d_then_s
 
     def reset(self):
         """
