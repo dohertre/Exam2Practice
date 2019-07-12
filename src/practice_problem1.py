@@ -44,9 +44,9 @@ def main():
     run_test_double()
     run_test_shrink()
     run_test_double_then_shrink()
-#     run_test_reset()
-#     run_test_steal()
-#     run_test_get_history()
+    run_test_reset()
+    run_test_steal()
+    run_test_get_history()
 #     run_test_combined_box()
 
 
@@ -355,7 +355,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 6. Implement and test this function.
+        # DONE: 6. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -386,6 +386,8 @@ class Box(object):
         # --------------------------------------------------------------
         self.volume = self.original_volume
         self.contents = self.original_contents
+
+        self.history = self.history + [self.contents]
 
     def steal(self, other_box):
         """
