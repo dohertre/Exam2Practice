@@ -47,7 +47,7 @@ def main():
     run_test_reset()
     run_test_steal()
     run_test_get_history()
-#     run_test_combined_box()
+    run_test_combined_box()
 
 
 ########################################################################
@@ -384,10 +384,9 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        self.history = self.history + [self.contents] #took me a while to figure out it needs to come BEFORE
         self.volume = self.original_volume
         self.contents = self.original_contents
-
-        self.history = self.history + [self.contents]
 
     def steal(self, other_box):
         """
